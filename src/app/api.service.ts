@@ -19,7 +19,7 @@ export class ApiService {
     'APIkey=2460239a218e22dd4c13f692c3caedafd1ef37cfc2fcbe58e645065c1fefd9d3';
 
   private PRED_URL_ENG = 'https://apiv2.apifootball.com/?action=get_predictions&' +
-                         'from=2019-12-16&to=2019-12-29' +
+                         'from=2019-12-17&to=2019-12-29' +
                          '&league_id=148' +
                          '&APIkey=2460239a218e22dd4c13f692c3caedafd1ef37cfc2fcbe58e645065c1fefd9d3';
 
@@ -39,7 +39,7 @@ export class ApiService {
     'APIkey=2460239a218e22dd4c13f692c3caedafd1ef37cfc2fcbe58e645065c1fefd9d3';
 
   private PRED_URL_PT = 'https://apiv2.apifootball.com/?action=get_predictions&' +
-    'from=2019-12-15&to=2020-01-29&' +
+    'from=2019-12-17&to=2020-01-29&' +
     'league_id=391&' +
     'APIkey=2460239a218e22dd4c13f692c3caedafd1ef37cfc2fcbe58e645065c1fefd9d3';
 

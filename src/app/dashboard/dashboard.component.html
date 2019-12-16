@@ -1,26 +1,39 @@
 
-<div class="jumbotron">
-  <div class="container">
-    <h1 class="display-3">Welcome to Football Betting!</h1>
-    <p>This is your first choice when betting on a football team anywhere around the globe. Come loose your money with us!</p>
-    <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
-  </div>
-</div>
-
-<!-- Example row of columns -->
-<div class="row">
-  <div class="col-md-4">
-    <h2>Games</h2>
-    <p>See recent fixtures, search for you favorite team, league and many more.</p>
-    <p><a class="btn btn-secondary" href="/games" role="button">View details &raquo;</a></p>
-  </div>
-  <div class="col-md-4">
-    <h2>Bets</h2>
-    <p>See the curent bets </p>
-    <p><a class="btn btn-secondary" href="/bets" role="button">View details &raquo;</a></p>
-  </div>
-  <div class="col-md-4">
-    <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-  </div>
-
+<!--<div class="jumbotron">-->
+<!--  <div class="container">-->
+<!--    <h1 class="display-3">Welcome to Football Betting!</h1>-->
+<!--    <p>This is your first choice when betting on a football team anywhere around the globe. Come loose your money with us!</p>-->
+<!--    <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>-->
+<!--  </div>-->
+<!--</div>-->
+<div>
+  <ngb-carousel *ngIf="images">
+    <ng-template ngbSlide>
+      <div class="picsum-img-wrapper">
+        <img [src]="images[0]" alt="Random first slide" class="w-100">
+      </div>
+      <div class="carousel-caption">
+        <h3>Welcome to Football Bets</h3>
+        <p>This is your first choice when betting on a football team anywhere around the globe.</p>
+      </div>
+    </ng-template>
+    <ng-template ngbSlide>
+      <div class="picsum-img-wrapper">
+        <img [src]="images[1]" alt="Random second slide" class="w-100">
+      </div>
+      <div class="carousel-caption">
+        <h3>See all recent fixtures</h3>
+        <p>All match results and details within one click.</p>
+      </div>
+    </ng-template>
+    <ng-template ngbSlide>
+      <div class="picsum-img-wrapper">
+        <img [src]="images[2]" alt="Random third slide" class="w-100">
+      </div>
+      <div class="carousel-caption">
+        <h3>Bet on any team!</h3>
+        <p>Come lose money with us right now.</p>
+      </div>
+    </ng-template>
+  </ngb-carousel>
 </div>
