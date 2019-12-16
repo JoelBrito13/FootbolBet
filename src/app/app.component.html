@@ -1,30 +1,140 @@
+<style>
+  :host {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 14px;
+    color: #333;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 8px 0;
+  }
+  p {
+    margin: 0;
+  }
+  .spacer {
+    flex: 1;
+  }
+  .toolbar img {
+    margin: 0 16px;
+  }
+  svg.material-icons {
+    height: 24px;
+    width: auto;
+  }
+  svg.material-icons:not(:last-child) {
+    margin-right: 8px;
+  }
+  .card.card.highlight-card span {
+    margin-left: 60px;
+  }
+  a,
+  a:visited,
+  a:hover {
+    color: #1976d2;
+    text-decoration: none;
+  }
+  a:hover {
+    color: #125699;
+  }
+  .terminal pre {
+    font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
+    color: white;
+    padding: 0 1rem 1rem;
+    margin: 0;
+  }
+  footer {
+    display: table;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 8px;
+    align-items: center;
+    line-height: 20px;
+  }
+  footer a {
+    display: flex;
+    align-items: center;
+  }
+  .github-star-badge {
+    color: #24292e;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    padding: 3px 10px;
+    border: 1px solid rgba(27,31,35,.2);
+    border-radius: 3px;
+    background-image: linear-gradient(-180deg,#fafbfc,#eff3f6 90%);
+    margin-left: 4px;
+    font-weight: 600;
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  }
+  .github-star-badge:hover {
+    background-image: linear-gradient(-180deg,#f0f3f6,#e6ebf1 90%);
+    border-color: rgba(27,31,35,.35);
+    background-position: -.5em;
+  }
+  .github-star-badge .material-icons {
+    height: 16px;
+    width: 16px;
+    margin-right: 4px;
+  }
+  /* Responsive Styles */
+  @media screen and (max-width: 767px) {
+    .card-container > *:not(.circle-link) ,
+    .terminal {
+      width: 100%;
+    }
+    .card:not(.highlight-card) {
+      height: 16px;
+      margin: 8px 0;
+    }
+    .card.highlight-card span {
+      margin-left: 72px;
+    }
+    svg#rocket-smoke {
+      right: 120px;
+      transform: rotate(-5deg);
+    }
+  }
+  @media screen and (max-width: 575px) {
+    svg#rocket-smoke {
+      display: none;
+      visibility: hidden;
+    }
+  }
+</style>
 
-<div class="toolbar" role="banner">
-  <nav>
+<div>
+  <mat-toolbar color="primary">
     <h1>
-      <a routerLink="">Home</a>
+      Football Bets
     </h1>
-  </nav>
-  <nav>
-    <h1>
-      <a routerLink="/games">Games</a>
-    </h1>
-  </nav>
-  <nav>
-    <h1>
-      <a routerLink="/bets">Bets</a>
-    </h1>
-  </nav>
-  <div class="topnav-right">
-    <nav>
-      <h1>
-        <a routerLink="/users">Login</a></h1>
-    </nav>
-  </div>
+    <button mat-button routerLink="/" title="Home">Home</button>
+    <button mat-button routerLink="/games" title="See all fixtures">Games</button>
+    <button mat-button routerLink="/predictions" title="See all predictions">Predictions</button>
+    <button mat-button routerLink="/bets" title="Make and/or see all bets">Bets</button>
+    <button mat-button routerLink="/about" title="About us">About</button>
+    <div class="spacer"></div>
+    <button mat-button routerLink="/users" title="Login into your account">Login</button>
+  </mat-toolbar><router-outlet></router-outlet>
 </div>
 
-<router-outlet></router-outlet>
-
-<footer>
-  <p>&copy; TWP 2019</p>
-</footer>
+<!-- Footer -->
+<div>
+  <footer>
+    Love Football Bets?&nbsp;
+    <a href="https://github.com/JoelBrito13/FootbolBetAPI" target="_blank" rel="noopener"> Give our repo a star.
+      <div class="github-star-badge">
+        <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        Star
+      </div>
+    </a>
+  </footer>
+</div>

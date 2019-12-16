@@ -1,1 +1,5 @@
-@import "../app.component.css";
+/*@import "../app.component.css";*/
+
+mat-form-field {
+  margin-right: 12px;
+}
