@@ -1,1 +1,8 @@
 @import "../app.component.css";
+
+h3 {
+  color : #24292e;
+}
+p {
+  color: #24292e;
+}

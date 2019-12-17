@@ -15,7 +15,7 @@ const routes: Routes = [
   {path: 'bets', component: BetsComponent},
   {path: 'games', component: GamesComponent},
   {path: 'users', component: UsersComponent},
-  {path: 'predictions', component: PredictionsComponent}
+  {path: 'predictions', component: PredictionsComponent},
 ];
 
 @NgModule({

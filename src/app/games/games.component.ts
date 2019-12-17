@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {ApiService} from '../api.service';
-import {MatDialog, MatDialogConfig} from '@angular/material';
 
 
 @Component({
@@ -12,15 +11,10 @@ export class GamesComponent implements OnInit {
   todayDate = new Date();
   minDate = new Date(2019, 10, 1);
   maxDate = new Date(this.todayDate);
-  games = [];
-  panelOpenState = false;
+  public games = [];
   constructor(private apiService: ApiService) { }
 
   ngOnInit() {
-    // this.apiService.getGames().subscribe((data: any[]) => {
-    //   console.log(data);
-    //   this.games = data;
-    // });
   }
 
   onSubmitEng() {

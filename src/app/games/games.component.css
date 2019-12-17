@@ -3,3 +3,13 @@
 mat-form-field {
   margin-right: 12px;
 }
+
+img {
+  float: right;
+}
+
+span {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+}

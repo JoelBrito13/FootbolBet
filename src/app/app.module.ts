@@ -8,7 +8,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { BetsComponent } from './bets/bets.component';
 import { GamesComponent} from './games/games.component';
 import { UsersComponent } from './users/users.component';
-import { DashboardComponent} from './dashboard/dashboard.component'
+import { DashboardComponent} from './dashboard/dashboard.component';
+import { PredictionsComponent } from './predictions/predictions.component';
+
+import { CommonModule } from '@angular/common';
 
 import {
   MatToolbarModule,
@@ -25,7 +28,9 @@ import {
 } from '@angular/material';
 import {MatDialogModule} from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { PredictionsComponent } from './predictions/predictions.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+
+
 
 
 @NgModule({
@@ -35,7 +40,7 @@ import { PredictionsComponent } from './predictions/predictions.component';
     GamesComponent,
     UsersComponent,
     DashboardComponent,
-    PredictionsComponent
+    PredictionsComponent,
   ],
   imports: [
     BrowserModule,
@@ -58,8 +63,8 @@ import { PredictionsComponent } from './predictions/predictions.component';
     MatInputModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatProgressBarModule
-
+    MatProgressBarModule,
+    NgbModule
   ],
   providers: [MatDatepickerModule],
   bootstrap: [AppComponent]
