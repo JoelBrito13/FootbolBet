@@ -8,27 +8,31 @@
   Please, select a league.
 </ngb-toast>
 
-<div class="justify-content-center align-items-center flex-wrap">
-  <mat-card *ngFor="let game of games">
-    <ngb-accordion [closeOthers]="true" activeIds="static-1" class="align-content-center">
-      <ngb-panel title="{{game.match_hometeam_name}} {{game.match_hometeam_score}} vs {{game.match_awayteam_score}} {{game.match_awayteam_name}}">
-        <ng-template ngbPanelContent>
-          <p *ngIf="game.league_name === 'Primeira Liga'">League: {{game.league_name}}<img src="https://www.thesportsdb.com/images/media/league/badge/cplp641535733210.png" style="width:220px;height:220px;margin-left:15px;"></p>
-          <p *ngIf="game.league_name === 'Premier League'">League: {{game.league_name}}<img src="https://www.thesportsdb.com/images/media/league/badge/i6o0kh1549879062.png" style="width:220px;height:220px;margin-left:15px;"></p>
-          <p *ngIf="game.league_name === 'Serie A'">League: {{game.league_name}}<img src="https://www.thesportsdb.com/images/media/league/badge/d97d4v1549879038.png" style="width:220px;height:220px;margin-left:15px;"></p>
-          <p>Match date: {{game.match_date}}</p>
-          <p>Match time: {{ game.match_time }}</p>
-          <p>Home team win chances: {{game.prob_HW}}%</p>
-          <p>Draw: {{game.prob_D}}%</p>
-          <p>Away team win chances: {{game.prob_AW}}%</p>
-        </ng-template>
-      </ngb-panel>
-    </ngb-accordion>
-  </mat-card>
-</div>
+<ngb-accordion *ngFor="let game of games | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
+  <ngb-toast *ngIf="games.length === 0" class="col-md-12 mx-auto mb-5 d-flex justify-content-center align-items-center flex-wrap">
+    No probabilities found for this event/period!
+  </ngb-toast>
+  <!--    <ngb-accordion [closeOthers]="true" activeIds="static-1" class="align-content-center">-->
+  <ngb-panel title="{{game.match_hometeam_name}} {{game.match_hometeam_score}} vs {{game.match_awayteam_score}} {{game.match_awayteam_name}}">
+    <ng-template ngbPanelContent>
+      <p *ngIf="game.league_name === 'Primeira Liga'">League: {{game.league_name}}<img src="https://www.thesportsdb.com/images/media/league/badge/cplp641535733210.png" style="width:220px;height:220px;margin-left:15px;"></p>
+      <p *ngIf="game.league_name === 'Premier League'">League: {{game.league_name}}<img src="https://www.thesportsdb.com/images/media/league/badge/i6o0kh1549879062.png" style="width:220px;height:220px;margin-left:15px;"></p>
+      <p *ngIf="game.league_name === 'Serie A'">League: {{game.league_name}}<img src="https://www.thesportsdb.com/images/media/league/badge/d97d4v1549879038.png" style="width:220px;height:220px;margin-left:15px;"></p>
+      <p>Match date: {{game.match_date}}</p>
+      <p>Match time: {{ game.match_time }}</p>
+      <p>Home team win chances: {{game.prob_HW}}%</p>
+      <p>Draw: {{game.prob_D}}%</p>
+      <p>Away team win chances: {{game.prob_AW}}%</p>
+    </ng-template>
+  </ngb-panel>
+  <!--    </ngb-accordion>-->
+</ngb-accordion>
+<!--</table>-->
+<ngb-pagination
+        [(page)]="page"
+        [pageSize]="pageSize"
+        [collectionSize]="games.length"
+        [maxSize]="5" [rotate]="true" [boundaryLinks]="true"
+        class="d-flex justify-content-end">
+</ngb-pagination>
 
-
-
-<!--<ngb-toast *ngIf="games.length === 0" class="col-md-12 mx-auto mb-5 d-flex justify-content-center align-items-center flex-wrap">-->
-<!--  No probabilities found for this event/period!-->
-<!--</ngb-toast>-->
