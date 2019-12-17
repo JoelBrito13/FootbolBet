@@ -6,10 +6,7 @@ export const environment = {
   production: false,
   url: {
     api: 'http://127.0.0.1:8000/',
-    app: 'http://localhost:4200/',
-    gamesAPI: 'https://apiv2.apifootball.com/' +
-      '?action=get_predictions' +
-      '&APIkey=2460239a218e22dd4c13f692c3caedafd1ef37cfc2fcbe58e645065c1fefd9d3'
+    app: 'http://localhost:4200/'
   },
 };
 
