@@ -8,12 +8,13 @@
   Please, select a league.
 </ngb-toast>
 
-<div class="justify-content-center align-items-center flex-wrap">
-  <div *ngFor="let game of games">
+<!--<table>-->
+  <ngb-accordion *ngFor="let game of games | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
     <ngb-toast *ngIf="games.length === 0" class="col-md-12 mx-auto mb-5 d-flex justify-content-center align-items-center flex-wrap">
       No probabilities found for this event/period!
     </ngb-toast>
-    <ngb-accordion [closeOthers]="true" activeIds="static-1" class="align-content-center">
+
+<!--    <ngb-accordion [closeOthers]="true" activeIds="static-1" class="align-content-center">-->
       <ngb-panel title="{{game.match_hometeam_name}} {{game.match_hometeam_score}} vs {{game.match_awayteam_score}} {{game.match_awayteam_name}}">
         <ng-template ngbPanelContent>
           <p *ngIf="game.league_name === 'Primeira Liga'">League: {{game.league_name}}<img src="https://www.thesportsdb.com/images/media/league/badge/cplp641535733210.png" style="width:220px;height:220px;margin-left:15px;"></p>
@@ -28,6 +29,13 @@
           <p>Half time away team score: {{ game.match_awayteam_halftime_score }}</p>
         </ng-template>
       </ngb-panel>
-    </ngb-accordion>
-  </div>
-</div>
+<!--    </ngb-accordion>-->
+  </ngb-accordion>
+<!--</table>-->
+<ngb-pagination
+        [(page)]="page"
+        [pageSize]="pageSize"
+        [collectionSize]="games.length"
+        [maxSize]="5" [rotate]="true" [boundaryLinks]="true"
+        class="d-flex justify-content-end">
+</ngb-pagination>

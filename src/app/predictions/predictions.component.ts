@@ -8,6 +8,8 @@ import {ApiService} from '../api.service';
 })
 export class PredictionsComponent implements OnInit {
   games = [];
+  page = 10;
+  pageSize = 10;
   constructor(private apiService: ApiService) { }
 
   ngOnInit() {

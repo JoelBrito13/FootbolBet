@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ApiService} from '../api.service';
 
 
@@ -8,9 +8,8 @@ import {ApiService} from '../api.service';
   styleUrls: ['./games.component.css']
 })
 export class GamesComponent implements OnInit {
-  todayDate = new Date();
-  minDate = new Date(2019, 10, 1);
-  maxDate = new Date(this.todayDate);
+  page = 10;
+  pageSize = 10;
   public games = [];
   constructor(private apiService: ApiService) { }
 

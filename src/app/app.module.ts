@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
@@ -29,6 +29,8 @@ import {
 import {MatDialogModule} from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import { AboutComponent } from './about/about.component';
 
 
 
@@ -41,6 +43,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     UsersComponent,
     DashboardComponent,
     PredictionsComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,
@@ -64,7 +67,9 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     MatDatepickerModule,
     MatNativeDateModule,
     MatProgressBarModule,
-    NgbModule
+    NgbModule,
+    MatPaginatorModule,
+    ReactiveFormsModule
   ],
   providers: [MatDatepickerModule],
   bootstrap: [AppComponent]
