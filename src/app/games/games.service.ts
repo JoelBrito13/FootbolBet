@@ -14,6 +14,7 @@ const httpOptions = {
 
 export class GamesService {
   private baseUrl = environment.url.gamesAPI;
+  token = null;
 
   constructor(private http: HttpClient) {
   }
@@ -39,6 +40,15 @@ export class GamesService {
     }
     const url = this.baseUrl + '&country_id=' + countryId + '&league_id=' + leagueId + '&from=' + from + '&to=' + to ;
     return this.http.get<Game[]>(url);
+  }
+
+  getGame(gameid): Observable<any> {
+    const url = 'http://127.0.0.1:8000/games/'
+    // var header = {
+    //   headers: new HttpHeaders()
+    //     .set('Authorization', this.token)
+    // }
+    return this.http.get(url, gameid);
   }
 }
 
