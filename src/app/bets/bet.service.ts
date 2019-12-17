@@ -12,7 +12,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class BetService {
-  private baseUrl = 'http://127.0.0.1:8000/bets/';
+  private baseUrl = 'http://jeanbrito.pythonanywhere.com/bets/';
 
 
   constructor(private http: HttpClient) { }

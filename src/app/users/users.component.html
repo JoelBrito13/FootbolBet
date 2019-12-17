@@ -4,7 +4,7 @@
 <ng-template #notlogged>
   <h2>Login</h2>
   <input [(ngModel)]="username" placeholder="username">
-  <input [(ngModel)]="password" placeholder="password">
+  <input [(ngModel)]="password" type="password" placeholder="password">
   <input type="submit" value="Enviar" (click)="login()">
 </ng-template>
 

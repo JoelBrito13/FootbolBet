@@ -13,7 +13,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class LoginService {
-  private baseUrl = 'http://127.0.0.1:8000/users/';
+  private baseUrl = 'http://jeanbrito.pythonanywhere.com/users/';
 
   constructor(private http: HttpClient) { }
 

@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   url: {
-    api: 'http://127.0.0.1:8000/',
+    api: 'http://jeanbrito.pythonanywhere.com/',
     app: 'http://localhost:4200/'
   },
 };
